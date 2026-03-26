@@ -14,7 +14,7 @@ risk.py — Risk Management Engine.
 import math
 import time
 from dataclasses import dataclass, field
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Tuple
 
 from logger import get_logger
 from models import TradeSignal
@@ -204,7 +204,6 @@ def apply_slippage(price: float, signal: TradeSignal,
 # ─────────────────────────────────────────────────────────────────────────────
 def sanity_check(spec: PositionSpec, max_notional: float = 100_000) -> Tuple[bool, str]:
     """Light sanity checks before submitting any order."""
-    from typing import Tuple
     if spec.quantity <= 0:
         return False, "Quantity ≤ 0"
     if spec.notional > max_notional:

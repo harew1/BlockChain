@@ -22,8 +22,8 @@ import requests
 import streamlit as st
 
 # ─── Config ───────────────────────────────────────────────────────────────────
-#BACKEND = "http://localhost:8000"
-BACKEND = st.secrets.get("BACKEND_URL", "http://localhost:8000")
+BACKEND = "http://localhost:8000"
+
 st.set_page_config(
     page_title="CryptoTrader Pro",
     page_icon="🤖",

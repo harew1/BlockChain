@@ -85,7 +85,7 @@ class TradeEngine:
             # Persist to DB first to get an ID
             with get_db() as db:
                 trade = Trade(
-                    user_id=user_id    if (user_id := self.user_id) else self.user_id,
+                    user_id=self.user_id,
                     symbol=symbol,
                     signal=signal,
                     status=TradeStatus.open,
